@@ -4,7 +4,17 @@ import java.util.Scanner;
 
 public class MoodAnalyser {
 	
-	 public String moodAnalysis(String message) {
+     String message;
+
+	 public MoodAnalyser(String message) {
+	        this.message = message;
+	    }
+
+	    public MoodAnalyser() {
+
+	    }
+	    
+	    public String moodAnalysis() {
 	        boolean status = message.toLowerCase().contains("sad");
 	        if (status == true) {
 	            return "Sad";
@@ -17,8 +27,8 @@ public class MoodAnalyser {
 	        Scanner input = new Scanner(System.in);
 	        System.out.print("Enter message : ");
 	        String message = input.nextLine();
-	        MoodAnalyser moodAnalyser = new MoodAnalyser();
-	        String result = moodAnalyser.moodAnalysis(message);
+	        MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+	        String result = moodAnalyser.moodAnalysis();
 	        System.out.println(result);
 	    }
 
